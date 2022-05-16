@@ -22,7 +22,7 @@ void AGeometryHubActor::BeginPlay()
 
 void AGeometryHubActor::DoActorSpawn1() const
 {
-	if (UWorld* World = GetWorld())
+	if (const auto World = GetWorld())
 	{
 		for (int32 i = 0; i < 10; ++i)
 		{
@@ -40,7 +40,7 @@ void AGeometryHubActor::DoActorSpawn1() const
 
 void AGeometryHubActor::DoActorSpawn2() const
 {
-	if (UWorld* World = GetWorld())
+	if (const auto World = GetWorld())
 	{
 		for (int32 i = 0; i < 10; ++i)
 		{
@@ -59,7 +59,7 @@ void AGeometryHubActor::DoActorSpawn2() const
 
 void AGeometryHubActor::DoActorSpawn3()
 {
-	if (UWorld* World = GetWorld())
+	if (const auto World = GetWorld())
 	{
 		for (const auto [valueGeometryClass, valueData, valueInitialTransform] : GeometryPayloads)
 		{
@@ -84,13 +84,12 @@ void AGeometryHubActor::OnTimerFinished(AActor* Actor)
 	if (!Actor) return;
 	UE_LOG(LogGeometryHub, Error, TEXT("Timer finished: %s"), *Actor->GetName());
 
-	ABaseGeometryActor* Geometry = Cast<ABaseGeometryActor>(Actor);
+	const auto Geometry = Cast<ABaseGeometryActor>(Actor);
 	if (!Geometry) return;
 
 	UE_LOG(LogGeometryHub, Display, TEXT("Cast is success, amplitude %f"), Geometry->GetGeometryData().Amplitude);
-
-	Geometry->Destroy();
-	// Geometry->SetLifeSpan(2.0f);
+	
+	Geometry->SetLifeSpan(2.0f);
 }
 
 // Called every frame
