@@ -7,7 +7,7 @@
 #include "BaseGeometryActor.h"
 #include "GeometryHubActor.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FGeometryPayload
 {
 	GENERATED_USTRUCT_BODY()
@@ -30,9 +30,6 @@ class TESTTASKUE5_API AGeometryHubActor final : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AGeometryHubActor();
-	void DoActorSpawn1() const;
-	void DoActorSpawn2() const;
-	void DoActorSpawn3();
 
 protected:
 	// Called when the game starts or when spawned
@@ -48,4 +45,13 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+private:
+	void DoActorSpawn1() const;
+	void DoActorSpawn2() const;
+	void DoActorSpawn3();
+
+	UFUNCTION()
+	void OnColorChanged(const FLinearColor& Color, const FString& Name);
+	
+	void OnTimerFinished(AActor* Actor);
 };
