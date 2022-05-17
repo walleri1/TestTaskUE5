@@ -46,9 +46,15 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 private:
+	ABaseGeometryActor* NonPropertyActor;
+
+	UPROPERTY()
+	ABaseGeometryActor* PropertyActor;
+	
 	void DoActorSpawn1() const;
 	void DoActorSpawn2() const;
 	void DoActorSpawn3();
+	void DoActorSpawn4();
 
 	UFUNCTION()
 	void OnColorChanged(const FLinearColor& Color, const FString& Name);
