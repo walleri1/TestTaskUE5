@@ -2,11 +2,11 @@
 
 #include "TestTaskUE5GameModeBase.h"
 
-#include "SandboxPawn.h"
-#include "SandBoxPlayerController.h"
+#include "STUBaseCharacter.h"
+#include "STUPlayerController.h"
 
 ATestTaskUE5GameModeBase::ATestTaskUE5GameModeBase()
 {
-	DefaultPawnClass = ASandboxPawn::StaticClass();
-	PlayerControllerClass = ASandBoxPlayerController::StaticClass();
+	DefaultPawnClass = ASTUBaseCharacter::StaticClass();
+	PlayerControllerClass = ASTUPlayerController::StaticClass();
 }
