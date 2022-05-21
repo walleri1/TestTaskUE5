@@ -13,5 +13,7 @@ UCLASS()
 class TESTTASKUE5_API ATestTaskUE5GameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+public:
+	ATestTaskUE5GameModeBase();
 };
