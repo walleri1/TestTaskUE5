@@ -1,5 +1,5 @@
 # TestTaskUE5
-## Conditions of the problem:
+## Conditions of the problem: ![Postponed](https://img.shields.io/badge/-Postponed-090909?style=for-the-badge)
 Create an interactive visual application in the genre of a tank arcade simulator.
 1. The game starts with a title screen consisting of a background and a "Start" button.
 2. After pressing the "Start" button, the game goes into the mission mode, where the player controls the movement of the cube symbolizing the tank by pressing the buttons on the keyboard.
